@@ -7,7 +7,7 @@ Günstige **Discord Server Boosts** (1 / 2 / 3 / 6 Monate) und **Bot Members** a
 - Glassmorphism Design mit Animationen
 - Responsive Landingpage
 - Nur Zahlung per Guthabenkarten
-- Sofortige Lieferung (Ziel < 5 Min)
+- Sofortige Lieferung (Ziel < 10 Min)
 
 ## Produkte
 
@@ -27,20 +27,10 @@ Günstige **Discord Server Boosts** (1 / 2 / 3 / 6 Monate) und **Bot Members** a
 | 1.000   | 1,40 € |
 | 5.000   | 5,99 € |
 
-## Tech
 
-- Pure HTML / CSS / JS
-- Font Awesome Icons
-- Glassmorphism + Animated Orbs
+## Rezensionen
 
-## Deployment
-
-Einfach als GitHub Pages hosten oder auf beliebigen Static Host.
-
-```bash
-# Lokal anschauen
-open index.html
-```
+**25+ Positive Bewertungen**
 
 ## Lizenz
 
