@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – BZM Store</title>
+  <meta name="description" content="Discord Boosts, Members konfigurieren, Bots & Services. Warenkorb & Bestellung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <nav class="navbar glass">
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="BZM Store">
+        <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
+          <defs>
+            <linearGradient id="bzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ef4444"/>
+              <stop offset="50%" stop-color="#f97316"/>
+              <stop offset="100%" stop-color="#fb923c"/>
+            </linearGradient>
+          </defs>
+          <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGrad)">BZM</text>
+          <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#boosts">Boosts</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/#payment">Zahlung</a></li>
+        <li><a href="/impressum">Impressum</a></li>
+      </ul>
+      <div class="nav-right">
+        <button type="button" class="cart-btn" data-open-cart aria-label="Warenkorb">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <a href="/#boosts" class="btn btn-primary nav-cta">Jetzt kaufen</a>
+        <button class="mobile-menu-btn" aria-label="Menü"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="services-page">
+    <div class="container">
+      <div class="page-header">
+        <h1>Services konfigurieren</h1>
+        <p>Wähle Members, Boosts oder weitere Services – alles in den Warenkorb, eine Bestellung, eine E-Mail.</p>
+      </div>
+
+      <section class="config-section" id="members-config">
+        <div class="config-layout">
+          <div class="config-left">
+            <div class="config-badge">Bot Members</div>
+            <h2>Members auswählen</h2>
+            <p class="config-desc">Ziehe den Regler auf die gewünschte Anzahl. Der Preis aktualisiert sich live.</p>
+            <div class="slider-wrap">
+              <div class="slider-labels">
+                <span>50</span>
+                <span id="memberValue" class="slider-value">500</span>
+                <span>20.000</span>
+              </div>
+              <input type="range" id="memberSlider" min="50" max="20000" step="50" value="500" />
+              <div class="quick-picks">
+                <button type="button" class="quick-btn" data-n="100">100</button>
+                <button type="button" class="quick-btn" data-n="500">500</button>
+                <button type="button" class="quick-btn active" data-n="1000">1.000</button>
+                <button type="button" class="quick-btn" data-n="5000">5.000</button>
+                <button type="button" class="quick-btn" data-n="10000">10.000</button>
+              </div>
+            </div>
+          </div>
+          <aside class="config-summary glass">
+            <h3>Deine Auswahl</h3>
+            <ul class="summary-list">
+              <li><i class="fa-solid fa-users"></i> <span id="sumMembers">500 Members</span></li>
+              <li><i class="fa-solid fa-bolt"></i> Sofortige Lieferung</li>
+              <li><i class="fa-solid fa-wifi"></i> Online Members</li>
+              <li><i class="fa-solid fa-shield"></i> Sichere Methode</li>
+              <li id="sumDiscountRow" class="hidden"><i class="fa-solid fa-tag"></i> <span id="sumDiscount">Bulk-Rabatt</span></li>
+            </ul>
+            <div class="summary-price">
+              <span class="label">Preis</span>
+              <span class="amount" id="sumPrice">0,80 €</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-full" id="addMembersBtn">
+              <i class="fa-solid fa-cart-plus"></i> In den Warenkorb
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="config-section">
+        <h2 class="section-title">Discord Boosts</h2>
+        <div class="svc-grid">
+          <article class="svc-card glass">
+            <h3>1 Monat</h3><p class="svc-price">2,99 €</p><ul><li>Level Boost</li><li>Sofortige Lieferung</li></ul>
+            <button type="button" class="btn btn-primary btn-full add-svc" data-id="boost-1" data-name="Discord Boost – 1 Monat" data-price="2.99">In den Warenkorb</button>
+          </article>
+          <article class="svc-card glass popular">
+            <span class="pop">Beliebt</span>
+            <h3>2 Monate</h3><p class="svc-price">5,49 €</p><ul><li>Level Boost</li><li>8% Rabatt</li></ul>
+            <button type="button" class="btn btn-primary btn-full add-svc" data-id="boost-2" data-name="Discord Boost – 2 Monate" data-price="5.49">In den Warenkorb</button>
+          </article>
+          <article class="svc-card glass">
+            <h3>3 Monate</h3><p class="svc-price">7,99 €</p><ul><li>Level Boost</li><li>11% Rabatt</li></ul>
+            <button type="button" class="btn btn-primary btn-full add-svc" data-id="boost-3" data-name="Discord Boost – 3 Monate" data-price="7.99">In den Warenkorb</button>
+          </article>
+          <article class="svc-card glass">
+            <h3>6 Monate</h3><p class="svc-price">14,99 €</p><ul><li>Level Boost</li><li>16% Rabatt</li></ul>
+            <button type="button" class="btn btn-primary btn-full add-svc" data-id="boost-6" data-name="Discord Boost – 6 Monate" data-price="14.99">In den Warenkorb</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="config-section">
+        <h2 class="section-title">Weitere Services</h2>
+        <div class="svc-grid">
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-link"></i></div><h3>Vanity URL</h3><p>discord.gg/deinname</p><p class="svc-price">ab 9,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="vanity" data-name="Vanity URL" data-price="9.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-robot"></i></div><h3>Custom Bot</h3><p>Mod, Welcome, Commands</p><p class="svc-price">ab 14,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="custom-bot" data-name="Custom Bot" data-price="14.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-palette"></i></div><h3>Server Design</h3><p>Rollen, Channels, Look</p><p class="svc-price">ab 7,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="server-design" data-name="Server Design" data-price="7.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-gift"></i></div><h3>Discord Nitro</h3><p>Basic & Classic</p><p class="svc-price">ab 2,49 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="nitro" data-name="Discord Nitro" data-price="2.49">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Moderation Setup</h3><p>Automod, Logs, Anti-Raid</p><p class="svc-price">ab 5,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="mod-setup" data-name="Moderation Setup" data-price="5.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-image"></i></div><h3>Banner & Icons</h3><p>Professionelles Design</p><p class="svc-price">ab 3,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="banner" data-name="Banner & Icons" data-price="3.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-face-smile"></i></div><h3>Custom Emojis</h3><p>Bis 50 Server-Emojis</p><p class="svc-price">ab 4,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="emojis" data-name="Custom Emojis" data-price="4.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-ticket"></i></div><h3>Ticket System</h3><p>Support mit Logs</p><p class="svc-price">ab 6,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="tickets" data-name="Ticket System" data-price="6.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-chart-line"></i></div><h3>Leveling System</h3><p>XP, Ranks, Leaderboard</p><p class="svc-price">ab 5,49 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="leveling" data-name="Leveling System" data-price="5.49">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-music"></i></div><h3>Music Bot</h3><p>Playlists & 24/7</p><p class="svc-price">ab 8,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="music-bot" data-name="Music Bot" data-price="8.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-copy"></i></div><h3>Server Template</h3><p>Komplette Struktur</p><p class="svc-price">ab 9,99 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="template" data-name="Server Template" data-price="9.99">In den Warenkorb</button></article>
+          <article class="svc-card solid"><div class="svc-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Animated Banner</h3><p>Custom GIF-Banner</p><p class="svc-price">ab 6,49 €</p><button type="button" class="btn btn-primary btn-full add-svc" data-id="animated-banner" data-name="Animated Banner" data-price="6.49">In den Warenkorb</button></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
+    <div class="cart-header">
+      <h2><i class="fa-solid fa-cart-shopping"></i> Warenkorb</h2>
+      <button type="button" class="cart-close" data-close-cart aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <p class="cart-empty" id="cartEmpty">Dein Warenkorb ist leer.</p>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>Gesamt</span><strong id="cartTotal">0,00 €</strong></div>
+      <button type="button" class="btn btn-primary btn-full" data-checkout>Zur Kasse</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal glass checkout-modal">
+      <button type="button" class="modal-close" data-close-checkout aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Bestellung abschließen</h3>
+      <p class="checkout-hint">Gesamt: <strong id="checkoutTotal">0,00 €</strong> · Zahlung per Guthabenkarte</p>
+      <form id="checkoutForm" action="https://formsubmit.co/teyoorll@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Neue BZM Store Bestellung" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://ss-rt-dev.github.io/bz-store/?ordered=1" />
+        <input type="hidden" name="Bestellung" id="checkoutCartPayload" value="" />
+        <div class="form-group">
+          <label for="co-discord">Discord Username / Server Invite *</label>
+          <input type="text" id="co-discord" name="Discord" required placeholder="User#1234 oder Invite-Link" />
+        </div>
+        <div class="form-group">
+          <label for="co-email">Deine E-Mail *</label>
+          <input type="email" id="co-email" name="email" required placeholder="deine@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="co-note">Nachricht (optional)</label>
+          <textarea id="co-note" name="Nachricht" rows="3" placeholder="z.B. gewünschter Lieferzeitpunkt"></textarea>
+        </div>
+        <p class="modal-note">Nach dem Absenden erhältst du eine Bestätigung und wir melden uns mit der Guthabenkarten-Anleitung.</p>
+        <button type="submit" class="btn btn-primary btn-full">Bestellung senden</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="BZM Store">
+            <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <linearGradient id="bzGradFooter" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#ef4444"/>
+                  <stop offset="50%" stop-color="#f97316"/>
+                  <stop offset="100%" stop-color="#fb923c"/>
+                </linearGradient>
+              </defs>
+              <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGradFooter)">BZM</text>
+              <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
+            </svg>
+          </a>
+          <p>Günstige Discord Boosts, Members & Services.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
+          <a href="/impressum">Impressum</a>
+          <button type="button" class="link-btn" data-open-cart>Warenkorb</button>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const slider = document.getElementById("memberSlider");
+    const memberValue = document.getElementById("memberValue");
+    const sumMembers = document.getElementById("sumMembers");
+    const sumPrice = document.getElementById("sumPrice");
+    const sumDiscountRow = document.getElementById("sumDiscountRow");
+    const sumDiscount = document.getElementById("sumDiscount");
+
+    function refreshMembers() {
+      const n = Number(slider.value);
+      const price = calcMemberPrice(n);
+      memberValue.textContent = n.toLocaleString("de-DE");
+      sumMembers.textContent = n.toLocaleString("de-DE") + " Members";
+      sumPrice.textContent = formatEuro(price);
+      if (n >= 500) {
+        sumDiscountRow.classList.remove("hidden");
+        if (n >= 5000) sumDiscount.textContent = "Max. Bulk-Rabatt";
+        else if (n >= 1000) sumDiscount.textContent = "Starker Mengenrabatt";
+        else sumDiscount.textContent = "Bulk-Rabatt aktiv";
+      } else {
+        sumDiscountRow.classList.add("hidden");
+      }
+      document.querySelectorAll(".quick-btn").forEach((b) => {
+        b.classList.toggle("active", Number(b.dataset.n) === n);
+      });
+    }
+
+    slider.addEventListener("input", refreshMembers);
+    document.querySelectorAll(".quick-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        slider.value = btn.dataset.n;
+        refreshMembers();
+      });
+    });
+    refreshMembers();
+
+    document.getElementById("addMembersBtn").addEventListener("click", () => {
+      const n = Number(slider.value);
+      const price = calcMemberPrice(n);
+      addToCart({
+        id: "members-" + n,
+        name: "Bot Members – " + n.toLocaleString("de-DE"),
+        price,
+        qty: 1,
+        options: n + " Stück",
+      });
+    });
+
+    document.querySelectorAll(".add-svc").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        addToCart({
+          id: btn.dataset.id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          qty: 1,
+        });
+      });
+    });
+  </script>
+</body>
+</html>
