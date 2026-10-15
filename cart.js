@@ -177,15 +177,16 @@ function closeCheckout() {
   document.body.style.overflow = "";
 }
 
+/** 0,02 € pro Member · je 10 Stück = 0,20 € */
 function calcMemberPrice(n) {
-  n = Math.max(50, Math.min(20000, Number(n) || 50));
-  let rate = 0.0025;
-  if (n >= 10000) rate = 0.001;
-  else if (n >= 5000) rate = 0.0012;
-  else if (n >= 1000) rate = 0.0014;
-  else if (n >= 500) rate = 0.0016;
-  else if (n >= 100) rate = 0.002;
-  return Math.max(0.2, Math.round(n * rate * 100) / 100);
+  n = Math.max(10, Math.min(50000, Number(n) || 10));
+  const units = Math.ceil(n / 10);
+  const price = units * 0.20;
+  return Math.round(price * 100) / 100;
+}
+function memberUnitLabel(n) {
+  const units = Math.ceil(n / 10);
+  return units + " × 10er-Pack (0,20 €)";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
