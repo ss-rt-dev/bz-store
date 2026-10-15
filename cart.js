@@ -237,8 +237,71 @@ function memberUnitLabel(n) {
   return units + " × 10er-Pack (0,20 €)";
 }
 
+function getAnnounce() {
+  try {
+    return JSON.parse(localStorage.getItem("bzm_announce") || '{"text":"","enabled":false}');
+  } catch {
+    return { text: "", enabled: false };
+  }
+}
+function getDiscounts() {
+  try {
+    return JSON.parse(localStorage.getItem("bzm_discounts") || "[]");
+  } catch {
+    return [];
+  }
+}
+function findDiscount(code) {
+  const c = String(code || "").trim().toUpperCase();
+  if (!c) return null;
+  return getDiscounts().find((d) => d.code === c) || null;
+}
+function recordSale(cartItems, total) {
+  try {
+    const key = "bzm_stats";
+    const stats = JSON.parse(
+      localStorage.getItem(key) || '{"orders":0,"items":0,"revenue":0,"products":{}}'
+    );
+    stats.orders = (stats.orders || 0) + 1;
+    let items = 0;
+    cartItems.forEach((i) => {
+      const q = i.qty || 1;
+      items += q;
+      const name = i.name || i.id;
+      if (!stats.products[name]) stats.products[name] = { qty: 0, revenue: 0 };
+      stats.products[name].qty += q;
+      stats.products[name].revenue += Number(i.price) * q;
+    });
+    stats.items = (stats.items || 0) + items;
+    stats.revenue = (stats.revenue || 0) + Number(total);
+    localStorage.setItem(key, JSON.stringify(stats));
+  } catch (e) {}
+}
+function renderAnnounceBanner() {
+  const a = getAnnounce();
+  let el = document.getElementById("siteAnnounce");
+  if (!a.enabled || !a.text) {
+    if (el) el.remove();
+    return;
+  }
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "siteAnnounce";
+    el.className = "site-announce";
+    const nav = document.querySelector(".navbar");
+    if (nav && nav.nextSibling) nav.parentNode.insertBefore(el, nav.nextSibling);
+    else if (nav) nav.parentNode.appendChild(el);
+    else document.body.prepend(el);
+  }
+  el.innerHTML =
+    '<div class="site-announce-inner"><i class="fa-solid fa-bullhorn"></i> <span>' +
+    String(a.text).replace(/</g, "&lt;") +
+    "</span></div>";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   updateCartUI();
+  renderAnnounceBanner();
 
   document.querySelectorAll("[data-open-cart]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -287,6 +350,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok && !data.success) throw new Error("send failed");
+        const sold = getCart();
+        const totalPaid = cartTotal();
+        recordSale(sold, totalPaid);
         clearCart();
         window.location.replace(THANKS_URL);
       } catch (err) {
