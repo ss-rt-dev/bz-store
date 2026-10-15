@@ -41,15 +41,25 @@
         <p>Service wählen – dann Menge, Dauer oder Notiz.</p>
       </div>
       <div class="promo-banner" style="margin-bottom:1.75rem">
-        <p style="margin:0"><strong>Members:</strong> 0,20 € je 10er · <strong>Boosts:</strong> ab 4,99 €</p>
+        <p style="margin:0"><strong>Members:</strong> 0,20 € je 10er · <strong>Boosts:</strong> ab 4,99 € · 16 Services</p>
       </div>
       <div class="picker-grid" id="pickerGrid">
         <button type="button" class="picker-card" data-config="members"><i class="fa-solid fa-users"></i><span class="picker-title">Bot Members</span><span class="picker-sub">0,20 € / 10er</span></button>
         <button type="button" class="picker-card" data-config="boosts"><i class="fa-solid fa-gem"></i><span class="picker-title">Server Boosts</span><span class="picker-sub">ab 4,99 €</span></button>
-        <button type="button" class="picker-card" data-config="vanity"><i class="fa-solid fa-link"></i><span class="picker-title">Vanity URL</span><span class="picker-sub">ab 9,99 €</span></button>
-        <button type="button" class="picker-card" data-config="custom-bot"><i class="fa-solid fa-robot"></i><span class="picker-title">Custom Bot</span><span class="picker-sub">ab 14,99 €</span></button>
+        <button type="button" class="picker-card" data-config="vanity"><i class="fa-solid fa-link"></i><span class="picker-title">Vanity URL</span><span class="picker-sub">9,99 €</span></button>
+        <button type="button" class="picker-card" data-config="custom-bot"><i class="fa-solid fa-robot"></i><span class="picker-title">Custom Bot</span><span class="picker-sub">14,99 €</span></button>
         <button type="button" class="picker-card" data-config="nitro"><i class="fa-solid fa-gift"></i><span class="picker-title">Discord Nitro</span><span class="picker-sub">ab 2,49 €</span></button>
-        <button type="button" class="picker-card" data-config="server-design"><i class="fa-solid fa-palette"></i><span class="picker-title">Server Design</span><span class="picker-sub">ab 7,99 €</span></button>
+        <button type="button" class="picker-card" data-config="server-design"><i class="fa-solid fa-palette"></i><span class="picker-title">Server Design</span><span class="picker-sub">7,99 €</span></button>
+        <button type="button" class="picker-card" data-config="ticket"><i class="fa-solid fa-ticket"></i><span class="picker-title">Ticket-System</span><span class="picker-sub">5,99 €</span></button>
+        <button type="button" class="picker-card" data-config="leveling"><i class="fa-solid fa-chart-line"></i><span class="picker-title">Leveling-System</span><span class="picker-sub">4,99 €</span></button>
+        <button type="button" class="picker-card" data-config="music"><i class="fa-solid fa-music"></i><span class="picker-title">Music Bot</span><span class="picker-sub">6,99 €</span></button>
+        <button type="button" class="picker-card" data-config="banner"><i class="fa-solid fa-image"></i><span class="picker-title">Server Banner</span><span class="picker-sub">3,99 €</span></button>
+        <button type="button" class="picker-card" data-config="emojis"><i class="fa-solid fa-face-smile"></i><span class="picker-title">Custom Emojis</span><span class="picker-sub">2,99 €</span></button>
+        <button type="button" class="picker-card" data-config="template"><i class="fa-solid fa-clone"></i><span class="picker-title">Server Template</span><span class="picker-sub">4,49 €</span></button>
+        <button type="button" class="picker-card" data-config="welcome"><i class="fa-solid fa-hand"></i><span class="picker-title">Welcome-System</span><span class="picker-sub">3,49 €</span></button>
+        <button type="button" class="picker-card" data-config="moderation"><i class="fa-solid fa-shield-halved"></i><span class="picker-title">Moderation Setup</span><span class="picker-sub">5,49 €</span></button>
+        <button type="button" class="picker-card" data-config="roles"><i class="fa-solid fa-user-tag"></i><span class="picker-title">Rollen-Setup</span><span class="picker-sub">3,99 €</span></button>
+        <button type="button" class="picker-card" data-config="reaction-roles"><i class="fa-solid fa-hand-pointer"></i><span class="picker-title">Reaction Roles</span><span class="picker-sub">4,49 €</span></button>
       </div>
       <section class="config-panel" id="configPanel" hidden>
         <div class="config-panel-top">
@@ -87,13 +97,14 @@
         <input type="hidden" name="_subject" value="🛒 BZM Store – Neue Bestellung" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_autoresponse" value="Danke für deine Bestellung bei BZM Store! Wir melden uns mit der Guthabenkarten-Anleitung. – Team BZM Store" />
+        <input type="hidden" name="_autoresponse" value="Danke für deine Bestellung bei BZM Store!" />
         <input type="hidden" name="Bestelldetails" id="checkoutCartPayload" value="" />
         <input type="hidden" name="Artikel" id="checkoutItemsField" value="" />
         <input type="hidden" name="Gesamtpreis" id="checkoutTotalField" value="" />
         <input type="hidden" name="Shop" value="BZM Store" />
         <div class="form-group"><label>Discord *</label><input type="text" name="Discord" required /></div>
         <div class="form-group"><label>E-Mail *</label><input type="email" name="email" required /></div>
+        <div class="form-group"><label>Rabattcode</label><input type="text" id="discountCode" name="Rabattcode" placeholder="optional" style="text-transform:uppercase" /></div>
         <div class="form-group"><label>Nachricht</label><textarea name="Nachricht" rows="3"></textarea></div>
         <button type="submit" class="btn btn-primary btn-full">Bestellung senden</button>
       </form>
@@ -116,25 +127,42 @@
       <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
-  <script src="cart.js?v=3"></script>
+  <script src="cart.js?v=4"></script>
   <script src="script.js"></script>
   <script>
     const CATALOG = {
-      members: { title: "Bot Members", type: "members", features: ["Online Members", "0,02 € / Member"] },
+      members: { title: "Bot Members", type: "members", features: ["Online Members", "0,02 € / Member", "10er-Packs"] },
       boosts: {
         title: "Server Boosts", type: "boosts",
         options: [
-          { id: "boost-1", label: "1 Monat", price: 4.99, desc: "" },
-          { id: "boost-2", label: "2 Monate", price: 9.49, desc: "Beliebt" },
-          { id: "boost-3", label: "3 Monate", price: 13.99, desc: "" },
-          { id: "boost-6", label: "6 Monate", price: 24.99, desc: "" },
+          { id: "boost-1", label: "1 Monat", price: 4.99 },
+          { id: "boost-2", label: "2 Monate", price: 9.49 },
+          { id: "boost-3", label: "3 Monate", price: 13.99 },
+          { id: "boost-6", label: "6 Monate", price: 24.99 },
         ],
-        features: ["Level Boost", "Sofort"],
+        features: ["Level Boost", "Sofort aktiv"],
       },
-      vanity: { title: "Vanity URL", type: "fixed", price: 9.99, features: ["Vanity"] },
-      "custom-bot": { title: "Custom Bot", type: "fixed", price: 14.99, features: ["Bot"] },
-      nitro: { title: "Discord Nitro", type: "fixed", price: 2.49, features: ["Nitro"] },
-      "server-design": { title: "Server Design", type: "fixed", price: 7.99, features: ["Design"] },
+      vanity: { title: "Vanity URL", type: "fixed", price: 9.99, features: ["Custom Invite"] },
+      "custom-bot": { title: "Custom Bot", type: "fixed", price: 14.99, features: ["Eigener Bot"] },
+      nitro: {
+        title: "Discord Nitro", type: "boosts",
+        options: [
+          { id: "nitro-1", label: "Nitro Basic 1 Monat", price: 2.49 },
+          { id: "nitro-3", label: "Nitro 1 Monat", price: 4.99 },
+        ],
+        features: ["Gift / Code"],
+      },
+      "server-design": { title: "Server Design", type: "fixed", price: 7.99, features: ["Channels", "Layout"] },
+      ticket: { title: "Ticket-System", type: "fixed", price: 5.99, features: ["Support-Tickets"] },
+      leveling: { title: "Leveling-System", type: "fixed", price: 4.99, features: ["XP", "Level-Rollen"] },
+      music: { title: "Music Bot", type: "fixed", price: 6.99, features: ["24/7"] },
+      banner: { title: "Server Banner", type: "fixed", price: 3.99, features: ["Custom Banner"] },
+      emojis: { title: "Custom Emojis", type: "fixed", price: 2.99, features: ["Pack"] },
+      template: { title: "Server Template", type: "fixed", price: 4.49, features: ["Struktur"] },
+      welcome: { title: "Welcome-System", type: "fixed", price: 3.49, features: ["Willkommen"] },
+      moderation: { title: "Moderation Setup", type: "fixed", price: 5.49, features: ["Auto-Mod"] },
+      roles: { title: "Rollen-Setup", type: "fixed", price: 3.99, features: ["Hierarchie"] },
+      "reaction-roles": { title: "Reaction Roles", type: "fixed", price: 4.49, features: ["Emoji → Rolle"] },
     };
     let currentState = { price: 0, name: "", id: "", options: null };
     const pickerGrid = document.getElementById("pickerGrid");
@@ -158,6 +186,7 @@
             <button type="button" class="quick-btn" data-n="100">100</button>
             <button type="button" class="quick-btn" data-n="500">500</button>
             <button type="button" class="quick-btn" data-n="1000">1.000</button>
+            <button type="button" class="quick-btn" data-n="5000">5.000</button>
           </div>
           <p id="memberValue" class="slider-value">100</p>`;
         const slider = document.getElementById("memberSlider");
@@ -171,19 +200,24 @@
         refresh();
       } else if (item.type === "boosts") {
         configControls.innerHTML = item.options.map((o,i) => `
-          <label class="option-row ${i===1?'active':''}">
-            <input type="radio" name="boost" value="${o.id}" data-price="${o.price}" data-label="${o.label}" ${i===1?'checked':''} />
+          <label class="option-row ${i===0?'active':''}">
+            <input type="radio" name="opt" value="${o.id}" data-price="${o.price}" data-label="${o.label}" ${i===0?'checked':''} />
             <span>${o.label}</span><span class="option-price">${formatEuro(o.price)}</span>
           </label>`).join("");
         const apply = () => {
-          const sel = document.querySelector('input[name="boost"]:checked');
-          setSummary(sel.value, "Boost – "+sel.dataset.label, parseFloat(sel.dataset.price), sel.dataset.label, item.features);
+          const sel = document.querySelector('input[name="opt"]:checked');
+          setSummary(sel.value, item.title + " – " + sel.dataset.label, parseFloat(sel.dataset.price), sel.dataset.label, item.features);
         };
-        document.querySelectorAll('input[name="boost"]').forEach((r) => r.addEventListener("change", apply));
+        document.querySelectorAll('input[name="opt"]').forEach((r) => r.addEventListener("change", apply));
         apply();
       } else {
+        configControls.innerHTML = `<p class="config-desc">${item.title}</p>
+          <div class="form-group"><label>Notiz (optional)</label><textarea id="svcNote" rows="2" placeholder="Server-Invite, Wünsche…"></textarea></div>`;
         setSummary(key, item.title, item.price, null, item.features);
-        configControls.innerHTML = `<p>${item.title}</p>`;
+        const note = document.getElementById("svcNote");
+        if (note) note.addEventListener("input", () => {
+          setSummary(key, item.title, item.price, note.value.trim() || null, item.features);
+        });
       }
     }
     function setSummary(id, name, price, options, features) {
