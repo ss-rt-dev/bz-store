@@ -181,7 +181,7 @@ function closeCheckout() {
 function calcMemberPrice(n) {
   n = Math.max(10, Math.min(50000, Number(n) || 10));
   const units = Math.ceil(n / 10);
-  const price = units * 0.20;
+  const price = units * 0.2;
   return Math.round(price * 100) / 100;
 }
 function memberUnitLabel(n) {
@@ -216,8 +216,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const checkoutForm = document.getElementById("checkoutForm");
   if (checkoutForm) {
-    checkoutForm.addEventListener("submit", () => {
-      setTimeout(() => clearCart(), 500);
+    checkoutForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = checkoutForm;
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Wird gesendet…";
+      }
+      try {
+        const fd = new FormData(form);
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: fd,
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("send failed");
+        clearCart();
+        // relative – same host as the shop (no broken github.io link)
+        window.location.href = "danke.html";
+      } catch (err) {
+        alert(
+          "Bestellung konnte nicht gesendet werden. Bitte nochmal versuchen oder uns direkt schreiben."
+        );
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Bestellung senden";
+        }
+      }
     });
   }
 });
