@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BZM Store – Discord Boosts, Members & Services</title>
-  <meta name="description" content="Günstige Discord Server Boosts, Bot Members und Services. Nur Guthabenkarten." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -23,7 +22,6 @@
     .promo-banner p { margin: 0; color: var(--text-muted); font-size: 0.95rem; flex: 1; min-width: 200px; }
     .section { padding: 3.5rem 1.5rem; }
     .cta-section { padding: 2.5rem 1.5rem 4rem; }
-    .footer { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -41,8 +39,6 @@
       </a>
       <ul class="nav-links">
         <li><a href="#angebot">Angebot</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#payment">Zahlung</a></li>
         <li><a href="/services">Shop</a></li>
         <li><a href="/impressum">Impressum</a></li>
       </ul>
@@ -51,7 +47,6 @@
           <i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span>
         </button>
         <a href="/services" class="btn btn-primary nav-cta">Zum Shop</a>
-        <button class="mobile-menu-btn" aria-label="Menü"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
   </nav>
@@ -59,89 +54,36 @@
     <div class="hero-content">
       <div class="badge glass"><i class="fa-solid fa-bolt"></i><span>Schnell • Günstig • Sicher</span></div>
       <h1 class="hero-title">Discord Boosts,<br /><span class="gradient-text">Members &amp; Services</span></h1>
-      <p class="hero-subtitle">Alles für deinen Server – Boosts, Members und 14+ Services.<br />Members ab <strong>0,20 € je 10 Stück</strong> · nur Guthabenkarten.</p>
+      <p class="hero-subtitle">Members ab <strong>0,20 € je 10 Stück</strong> · Boosts ab 4,99 € · nur Guthabenkarten.</p>
       <div class="hero-actions">
-        <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-bag-shopping"></i> Jetzt konfigurieren</a>
-        <a href="#angebot" class="btn btn-glass btn-lg"><i class="fa-solid fa-circle-info"></i> Was wir anbieten</a>
-      </div>
-      <div class="hero-stats glass">
-        <div class="stat"><span class="stat-value">2.500+</span><span class="stat-label">Kunden</span></div>
-        <div class="stat"><span class="stat-value">&lt; 5 Min</span><span class="stat-label">Lieferzeit</span></div>
-        <div class="stat"><span class="stat-value">24/7</span><span class="stat-label">Support</span></div>
+        <a href="/services" class="btn btn-primary btn-lg">Jetzt konfigurieren</a>
+        <a href="#angebot" class="btn btn-glass btn-lg">Was wir anbieten</a>
       </div>
     </div>
   </header>
   <section id="angebot" class="section">
     <div class="container">
       <div class="promo-banner">
-        <p><strong>Services-Shop:</strong> Zuerst auswählen, dann konfigurieren – Members in 10er-Packs, Boosts nach Dauer.</p>
+        <p><strong>Shop:</strong> Service wählen, konfigurieren, Warenkorb.</p>
         <a href="/services" class="btn btn-primary">Zum Shop →</a>
-      </div>
-      <div class="section-header">
-        <span class="section-badge glass"><i class="fa-solid fa-store"></i> Unser Angebot</span>
-        <h2>Was du bei BZM Store bekommst</h2>
-        <p>Überblick – Preise und Optionen stellst du im Shop ein.</p>
       </div>
       <div class="cards-grid">
         <article class="card glass product-card">
-          <div class="card-icon boost"><i class="fa-solid fa-gem"></i></div>
           <h3>Server Boosts</h3>
-          <p class="card-desc">1–6 Monate. Mehr Level = bessere Features (Audio, Upload, Vanity ab Level 3).</p>
           <div class="price"><span class="amount">ab 4,99 €</span></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> 1 Monat 4,99 €</li>
-            <li><i class="fa-solid fa-check"></i> 2 Monate 9,49 €</li>
-            <li><i class="fa-solid fa-check"></i> 3 / 6 Monate 13,99 € / 24,99 €</li>
-          </ul>
           <a href="/services#boosts" class="btn btn-primary buy-btn">Im Shop wählen</a>
         </article>
         <article class="card glass product-card popular">
           <div class="popular-badge">0,20 € / 10</div>
-          <div class="card-icon members"><i class="fa-solid fa-users"></i></div>
           <h3>Bot Members</h3>
-          <p class="card-desc"><strong>0,02 € pro Member</strong> – in 10er-Packs zu je <strong>0,20 €</strong>. Anzahl im Shop frei wählen.</p>
           <div class="price"><span class="amount">0,20 € / 10</span></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> Online Members</li>
-            <li><i class="fa-solid fa-check"></i> Ab 10 Stück</li>
-            <li><i class="fa-solid fa-check"></i> Sofortige Lieferung</li>
-          </ul>
           <a href="/services#members" class="btn btn-primary buy-btn">Anzahl wählen</a>
         </article>
         <article class="card glass product-card">
-          <div class="card-icon boost"><i class="fa-solid fa-layer-group"></i></div>
           <h3>Weitere Services</h3>
-          <p class="card-desc">Vanity, Bot, Design, Nitro, Tickets, Leveling, Music Bot, Banner, Emojis u.v.m.</p>
           <div class="price"><span class="amount">ab 2,49 €</span></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> 14+ Services</li>
-            <li><i class="fa-solid fa-check"></i> Optional Notiz</li>
-            <li><i class="fa-solid fa-check"></i> Ein Warenkorb</li>
-          </ul>
           <a href="/services" class="btn btn-primary buy-btn">Services ansehen</a>
         </article>
-      </div>
-    </div>
-  </section>
-  <section id="ablauf" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge glass"><i class="fa-solid fa-route"></i> Ablauf</span>
-        <h2>In drei Schritten</h2>
-      </div>
-      <div class="payment-grid">
-        <div class="card glass payment-card"><i class="fa-solid fa-sliders"></i><h3>1. Konfigurieren</h3><p>Im Shop Service wählen, Menge/Dauer einstellen.</p></div>
-        <div class="card glass payment-card"><i class="fa-solid fa-credit-card"></i><h3>2. Bestellen</h3><p>Discord + E-Mail. Zahlung per Guthabenkarte.</p></div>
-        <div class="card glass payment-card"><i class="fa-solid fa-bolt"></i><h3>3. Lieferung</h3><p>Meist unter 5 Minuten nach Bestätigung.</p></div>
-      </div>
-    </div>
-  </section>
-  <section id="payment" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge glass"><i class="fa-solid fa-gift"></i> Zahlung</span>
-        <h2>Nur Guthabenkarten</h2>
-        <p>PaySafe, Amazon, Google Play, Steam u.a. – anonym, ohne Bankdaten.</p>
       </div>
     </div>
   </section>
@@ -149,42 +91,18 @@
     <div class="container">
       <div class="cta-box glass">
         <h2>Bereit?</h2>
-        <p>Im Shop konfigurieren und bestellen.</p>
-        <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Zum Shop</a>
+        <a href="/services" class="btn btn-primary btn-lg">Zum Shop</a>
       </div>
     </div>
   </section>
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <a href="/" class="logo" aria-label="BZM Store">
-            <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs><linearGradient id="bzGradFooter" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#ef4444"/><stop offset="50%" stop-color="#f97316"/><stop offset="100%" stop-color="#fb923c"/>
-              </linearGradient></defs>
-              <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGradFooter)">BZM</text>
-              <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
-            </svg>
-          </a>
-          <p>Discord Boosts, Members &amp; Services – nur Guthabenkarten.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#angebot">Angebot</a>
-          <a href="/services">Shop</a>
-          <a href="/impressum">Impressum</a>
-          <button type="button" class="link-btn" data-open-cart>Warenkorb</button>
-        </div>
-      </div>
       <div class="footer-bottom"><p>© 2026 BZM Store · <a href="/impressum">Impressum</a></p></div>
     </div>
   </footer>
   <div class="cart-overlay" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
-    <div class="cart-header">
-      <h2><i class="fa-solid fa-cart-shopping"></i> Warenkorb</h2>
-      <button type="button" class="cart-close" data-close-cart aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
-    </div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h2>Warenkorb</h2><button type="button" class="cart-close" data-close-cart><i class="fa-solid fa-xmark"></i></button></div>
     <p class="cart-empty" id="cartEmpty">Dein Warenkorb ist leer.</p>
     <div class="cart-items" id="cartItems"></div>
     <div class="cart-footer">
@@ -194,14 +112,14 @@
   </aside>
   <div class="modal-overlay" id="checkoutModal">
     <div class="modal glass checkout-modal">
-      <button type="button" class="modal-close" data-close-checkout aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+      <button type="button" class="modal-close" data-close-checkout><i class="fa-solid fa-xmark"></i></button>
       <h3>Bestellung abschließen</h3>
       <p class="checkout-hint">Gesamt: <strong id="checkoutTotal">0,00 €</strong></p>
       <form id="checkoutForm" action="https://formsubmit.co/teyoorll@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Neue BZM Store Bestellung" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://ss-rt-dev.github.io/bz-store/?ordered=1" />
+        <input type="hidden" name="_next" value="https://ss-rt-dev.github.io/bz-store/danke.html" />
         <input type="hidden" name="Bestellung" id="checkoutCartPayload" value="" />
         <div class="form-group"><label for="co-discord">Discord / Invite *</label><input type="text" id="co-discord" name="Discord" required /></div>
         <div class="form-group"><label for="co-email">E-Mail *</label><input type="email" id="co-email" name="email" required /></div>
