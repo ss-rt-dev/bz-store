@@ -84,11 +84,15 @@
       <h3>Bestellung abschließen</h3>
       <p class="checkout-hint">Gesamt: <strong id="checkoutTotal">0,00 €</strong></p>
       <form id="checkoutForm" action="https://formsubmit.co/teyoorll@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Neue BZM Store Bestellung" />
+        <input type="hidden" name="_subject" value="🛒 BZM Store – Neue Bestellung" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://ss-rt-dev.github.io/bz-store/danke.html" />
-        <input type="hidden" name="Bestellung" id="checkoutCartPayload" value="" />
+        <input type="hidden" name="_next" value="https://bzm-store.vercel.app/danke" />
+        <input type="hidden" name="_autoresponse" value="Danke für deine Bestellung bei BZM Store! Wir melden uns mit der Guthabenkarten-Anleitung. – Team BZM Store" />
+        <input type="hidden" name="Bestelldetails" id="checkoutCartPayload" value="" />
+        <input type="hidden" name="Artikel" id="checkoutItemsField" value="" />
+        <input type="hidden" name="Gesamtpreis" id="checkoutTotalField" value="" />
+        <input type="hidden" name="Shop" value="BZM Store" />
         <div class="form-group"><label>Discord *</label><input type="text" name="Discord" required /></div>
         <div class="form-group"><label>E-Mail *</label><input type="email" name="email" required /></div>
         <div class="form-group"><label>Nachricht</label><textarea name="Nachricht" rows="3"></textarea></div>
@@ -99,9 +103,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <p>BZM Store – nur Guthabenkarten.</p>
-        </div>
+        <div class="footer-brand"><p>BZM Store – nur Guthabenkarten.</p></div>
         <div class="footer-col">
           <p class="footer-col-title">Hilfe</p>
           <ul class="footer-links">
