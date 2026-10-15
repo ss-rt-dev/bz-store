@@ -55,6 +55,14 @@ const productNames = {
   "nitro": "Discord Nitro",
   "mod-setup": "Moderation Setup",
   "banner": "Banner & Icons",
+  "emojis": "Custom Emojis",
+  "tickets": "Ticket System",
+  "giveaway": "Giveaway Setup",
+  "leveling": "Leveling System",
+  "music-bot": "Music Bot",
+  "template": "Server Template",
+  "partner": "Partner / Promo",
+  "animated-banner": "Animated Banner",
 };
 
 document.querySelectorAll(".buy-btn").forEach((btn) => {
