@@ -54,7 +54,7 @@
   <header class="hero">
     <div class="hero-content">
       <div class="badge glass"><i class="fa-solid fa-bolt"></i><span>Schnell • Günstig • Sicher</span></div>
-      <h1 class="hero-title">Discord Boosts,<br /><span class="gradient-text">Members &amp; Services</span></h1>
+      <h1 class="hero-title">Discord Boosts,<br /><span class="gradient-text">Members & Services</span></h1>
       <p class="hero-subtitle">Alles für deinen Server – Boosts, Members und 14+ Services.<br />Members ab <strong>0,20 € je 10 Stück</strong> · Boosts ab <strong>4,99 €</strong> · nur Guthabenkarten.</p>
       <div class="hero-actions">
         <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-bag-shopping"></i> Jetzt konfigurieren</a>
@@ -62,7 +62,7 @@
       </div>
       <div class="hero-stats glass">
         <div class="stat"><span class="stat-value">2.500+</span><span class="stat-label">Kunden</span></div>
-        <div class="stat"><span class="stat-value">&lt; 5 Min</span><span class="stat-label">Lieferzeit</span></div>
+        <div class="stat"><span class="stat-value">< 5 Min</span><span class="stat-label">Lieferzeit</span></div>
         <div class="stat"><span class="stat-value">24/7</span><span class="stat-label">Support</span></div>
       </div>
     </div>
@@ -158,7 +158,7 @@
       <div class="payment-grid">
         <div class="card glass payment-card">
           <i class="fa-solid fa-shield-halved"></i>
-          <h3>Sicher &amp; anonym</h3>
+          <h3>Sicher & anonym</h3>
           <p>Keine IBAN, keine PayPal-Verknüpfung. Nur der Karten-Code nach Absprache.</p>
         </div>
         <div class="card glass payment-card">
@@ -196,7 +196,7 @@
               <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
             </svg>
           </a>
-          <p>Discord Boosts, Members &amp; Services – nur Guthabenkarten.</p>
+          <p>Discord Boosts, Members & Services – nur Guthabenkarten.</p>
         </div>
         <div class="footer-col">
           <p class="footer-col-title">Hilfe</p>
@@ -227,12 +227,17 @@
       <h3>Bestellung abschließen</h3>
       <p class="checkout-hint">Gesamt: <strong id="checkoutTotal">0,00 €</strong></p>
       <form id="checkoutForm" action="https://formsubmit.co/teyoorll@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Neue BZM Store Bestellung" />
+        <input type="hidden" name="_subject" value="🛒 BZM Store – Neue Bestellung" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="Bestellung" id="checkoutCartPayload" value="" />
-        <div class="form-group"><label for="co-discord">Discord / Invite *</label><input type="text" id="co-discord" name="Discord" required /></div>
-        <div class="form-group"><label for="co-email">E-Mail *</label><input type="email" id="co-email" name="email" required /></div>
+        <input type="hidden" name="_next" value="https://bzm-store.vercel.app/danke" />
+        <input type="hidden" name="_autoresponse" value="Danke für deine Bestellung bei BZM Store! Wir melden uns gleich mit der Guthabenkarten-Anleitung. – Team BZM Store" />
+        <input type="hidden" name="Bestelldetails" id="checkoutCartPayload" value="" />
+        <input type="hidden" name="Artikel" id="checkoutItemsField" value="" />
+        <input type="hidden" name="Gesamtpreis" id="checkoutTotalField" value="" />
+        <input type="hidden" name="Shop" value="BZM Store" />
+        <div class="form-group"><label for="co-discord">Discord / Invite *</label><input type="text" id="co-discord" name="Discord" required placeholder="User#1234 oder Invite" /></div>
+        <div class="form-group"><label for="co-email">E-Mail *</label><input type="email" id="co-email" name="email" required placeholder="deine@email.com" /></div>
         <div class="form-group"><label for="co-note">Nachricht</label><textarea id="co-note" name="Nachricht" rows="3"></textarea></div>
         <button type="submit" class="btn btn-primary btn-full">Bestellung senden</button>
       </form>
