@@ -83,11 +83,10 @@
       <button type="button" class="modal-close" data-close-checkout><i class="fa-solid fa-xmark"></i></button>
       <h3>Bestellung abschließen</h3>
       <p class="checkout-hint">Gesamt: <strong id="checkoutTotal">0,00 €</strong></p>
-      <form id="checkoutForm" action="https://formsubmit.co/teyoorll@gmail.com" method="POST">
+      <form id="checkoutForm" action="https://formsubmit.co/ajax/teyoorll@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="🛒 BZM Store – Neue Bestellung" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://bzm-store.vercel.app/danke" />
         <input type="hidden" name="_autoresponse" value="Danke für deine Bestellung bei BZM Store! Wir melden uns mit der Guthabenkarten-Anleitung. – Team BZM Store" />
         <input type="hidden" name="Bestelldetails" id="checkoutCartPayload" value="" />
         <input type="hidden" name="Artikel" id="checkoutItemsField" value="" />
@@ -117,7 +116,7 @@
       <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
-  <script src="cart.js"></script>
+  <script src="cart.js?v=3"></script>
   <script src="script.js"></script>
   <script>
     const CATALOG = {
