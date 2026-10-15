@@ -4,6 +4,7 @@
   "rewrites": [
     { "source": "/impressum", "destination": "/impressum.html" },
     { "source": "/services", "destination": "/services.html" },
-    { "source": "/danke", "destination": "/danke.html" }
+    { "source": "/danke", "destination": "/danke.html" },
+    { "source": "/admin", "destination": "/admin.html" }
   ]
 }
