@@ -16,12 +16,12 @@
   --primary-hover: #4752c4;
   --accent: #eb459e;
   --success: #57f287;
-  --glass: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-strong: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-strong: rgba(255, 255, 255, 0.15);
   --radius: 20px;
   --radius-sm: 12px;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -64,7 +64,7 @@ img {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.45;
+  opacity: 0.5;
   animation: float 20s ease-in-out infinite;
 }
 
@@ -108,13 +108,13 @@ img {
   }
 }
 
-/* ===== Glass Utility ===== */
+/* ===== Glass Utility – stronger ===== */
 .glass {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* ===== Buttons ===== */
@@ -146,14 +146,15 @@ img {
 }
 
 .btn-glass {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--text);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .btn-glass:hover {
-  background: var(--glass-strong);
+  background: rgba(255, 255, 255, 0.16);
   transform: translateY(-2px);
 }
 
@@ -200,13 +201,14 @@ img {
 
 .nav-links {
   display: flex;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   font-weight: 500;
   color: var(--text-muted);
   transition: color var(--transition);
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -343,6 +345,20 @@ img {
   margin-bottom: 1rem;
 }
 
+.section-badge-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  background: #1a1a24;
+  border: 1px solid #2a2a38;
+  color: var(--text-muted);
+}
+
 .section-header h2 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
@@ -355,7 +371,7 @@ img {
   margin: 0 auto;
 }
 
-/* ===== Cards ===== */
+/* ===== Cards (Glass products) ===== */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -374,13 +390,13 @@ img {
 
 .product-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(88, 101, 242, 0.4);
-  box-shadow: 0 16px 48px rgba(88, 101, 242, 0.2);
+  border-color: rgba(88, 101, 242, 0.45);
+  box-shadow: 0 16px 48px rgba(88, 101, 242, 0.25);
 }
 
 .product-card.popular {
-  border-color: rgba(88, 101, 242, 0.5);
-  background: rgba(88, 101, 242, 0.08);
+  border-color: rgba(88, 101, 242, 0.55);
+  background: rgba(88, 101, 242, 0.12);
 }
 
 .popular-badge {
@@ -409,12 +425,12 @@ img {
 }
 
 .card-icon.boost {
-  background: linear-gradient(135deg, rgba(88, 101, 242, 0.25), rgba(235, 69, 158, 0.2));
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.3), rgba(235, 69, 158, 0.25));
   color: #a5b4fc;
 }
 
 .card-icon.members {
-  background: linear-gradient(135deg, rgba(87, 242, 135, 0.2), rgba(88, 101, 242, 0.2));
+  background: linear-gradient(135deg, rgba(87, 242, 135, 0.25), rgba(88, 101, 242, 0.25));
   color: #86efac;
 }
 
@@ -467,6 +483,69 @@ img {
 .buy-btn {
   width: 100%;
   margin-top: auto;
+}
+
+/* ===== Services (NO glass – solid cards) ===== */
+.services-section {
+  background: #0c0c12;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.service-card {
+  background: #14141c;
+  border: 1px solid #252532;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: #3a3a4a;
+  background: #181822;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.1rem;
+  background: #1e1e2a;
+  color: #f97316;
+  border: 1px solid #2e2e3c;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.15rem;
+  flex-grow: 1;
+}
+
+.service-card .price {
+  margin-bottom: 1rem;
+}
+
+.service-card .price .amount {
+  font-size: 1.35rem;
 }
 
 /* ===== Payment ===== */
@@ -750,7 +829,6 @@ img {
   }
 }
 
-/* Simple AOS-like on scroll */
 [data-aos] {
   opacity: 0;
   transform: translateY(30px);
@@ -783,7 +861,8 @@ img {
     gap: 1.25rem;
   }
 
-  .cards-grid {
+  .cards-grid,
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
