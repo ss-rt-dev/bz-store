@@ -4,134 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impressum – BZM Store</title>
-  <meta name="description" content="Impressum und rechtliche Angaben zu BZM Store." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .legal-page { padding: 8rem 1.5rem 4rem; max-width: 720px; margin: 0 auto; }
-    .legal-page h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .legal-page .intro { color: var(--text-muted); margin-bottom: 2.5rem; }
-    .legal-block {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.25rem;
-    }
-    .legal-block h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.85rem; }
-    .legal-block p, .legal-block address { color: var(--text-muted); font-style: normal; line-height: 1.7; margin-bottom: 0.35rem; }
-    .legal-block a { color: #7289da; }
-    .legal-block a:hover { text-decoration: underline; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .back-link:hover { color: var(--text); }
-  </style>
+  <link rel="stylesheet" href="cart.css" />
 </head>
 <body>
-  <div class="bg-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
+  <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
   <nav class="navbar glass">
     <div class="nav-container">
       <a href="/" class="logo" aria-label="BZM Store">
         <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
-          <defs>
-            <linearGradient id="bzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ef4444"/>
-              <stop offset="50%" stop-color="#f97316"/>
-              <stop offset="100%" stop-color="#fb923c"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="bzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ef4444"/><stop offset="50%" stop-color="#f97316"/><stop offset="100%" stop-color="#fb923c"/>
+          </linearGradient></defs>
           <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGrad)">BZM</text>
           <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
         </svg>
       </a>
       <ul class="nav-links">
-        <li><a href="/#boosts">Boosts</a></li>
-        <li><a href="/#members">Members</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#payment">Zahlung</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Shop</a></li>
         <li><a href="/impressum">Impressum</a></li>
       </ul>
-      <a href="/#boosts" class="btn btn-primary nav-cta">Jetzt kaufen</a>
-      <button class="mobile-menu-btn" aria-label="Menü"><i class="fa-solid fa-bars"></i></button>
     </div>
   </nav>
-  <main class="legal-page">
-    <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zum Store</a>
-    <h1>Impressum</h1>
-    <p class="intro">Rechtliche Angaben und Kontaktinformationen zu BZM Store.</p>
-    <div class="legal-block">
-      <h2>Angaben gemäß den gesetzlichen Bestimmungen</h2>
-      <address>
-        <strong style="color: var(--text)">Justin Scheer</strong><br />
-        Op der Haaptstroos 31<br />
-        9198 Ell<br />
-        Luxemburg
-      </address>
-    </div>
-    <div class="legal-block">
-      <h2>Kontakt</h2>
-      <p><strong style="color: var(--text)">Telefon:</strong><br /><a href="tel:+352621399411">+352 621 399 411</a></p>
-      <p style="margin-top: 0.75rem"><strong style="color: var(--text)">E-Mail:</strong><br /><a href="mailto:teyoorll@gmail.com">teyoorll@gmail.com</a></p>
-      <p style="margin-top: 0.75rem"><strong style="color: var(--text)">Website:</strong><br /><a href="https://github.com/ss-rt-dev/bz-store" target="_blank" rel="noopener">BZM Store</a></p>
-    </div>
-    <div class="legal-block">
-      <h2>Verantwortlich für den Inhalt</h2>
-      <address>
-        Justin Scheer<br />
-        Op der Haaptstroos 31<br />
-        9198 Ell<br />
-        Luxemburg
-      </address>
-    </div>
-    <div class="legal-block">
-      <h2>Haftung für Inhalte</h2>
-      <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
-    </div>
-    <div class="legal-block">
-      <h2>Haftung für Links</h2>
-      <p>Diese Website kann Links zu externen Websites Dritter enthalten. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Betreiber verantwortlich.</p>
-    </div>
-    <div class="legal-block">
-      <h2>Urheberrecht</h2>
-      <p>Die auf dieser Website erstellten Inhalte und Werke unterliegen dem geltenden Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Verwertung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen Zustimmung des jeweiligen Rechteinhabers.</p>
+  <main class="section" style="padding-top:7rem">
+    <div class="container" style="max-width:720px">
+      <h1 style="font-weight:800;margin-bottom:1.5rem">Impressum</h1>
+      <div class="card glass" style="padding:1.75rem">
+        <p><strong>Justin Scheer</strong></p>
+        <p>18, rue de la Cimenterie</p>
+        <p>L-5354 Oetrange</p>
+        <p>Luxemburg</p>
+        <p style="margin-top:1rem">E-Mail: siehe Kontakt auf der Website</p>
+      </div>
     </div>
   </main>
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <a href="/" class="logo" aria-label="BZM Store">
-            <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="bzGradFooter" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#ef4444"/>
-                  <stop offset="50%" stop-color="#f97316"/>
-                  <stop offset="100%" stop-color="#fb923c"/>
-                </linearGradient>
-              </defs>
-              <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGradFooter)">BZM</text>
-              <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
-            </svg>
-          </a>
-          <p>Günstige Discord Boosts, Members & Services. Nur Guthabenkarten.</p>
+          <p>BZM Store – nur Guthabenkarten.</p>
         </div>
-        <div class="footer-links">
-          <a href="/#boosts">Boosts</a>
-          <a href="/#members">Members</a>
-          <a href="/#services">Services</a>
-          <a href="/impressum">Impressum</a>
+        <div class="footer-col">
+          <p class="footer-col-title">Hilfe</p>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Shop</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom"><p>© 2026 BZM Store. Alle Rechte vorbehalten.</p></div>
+      <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>
