@@ -2,6 +2,7 @@
  * BZM Store – Shared Shopping Cart (localStorage)
  */
 const CART_KEY = "bzm_cart";
+const THANKS_URL = "https://bzm-store.vercel.app/danke";
 
 function getCart() {
   try {
@@ -154,16 +155,7 @@ function openCheckout() {
   closeCart();
   const modal = document.getElementById("checkoutModal");
   if (modal) {
-    const summary = cart
-      .map(
-        (i) =>
-          `${i.name}${i.options ? " (" + i.options + ")" : ""} ×${i.qty || 1} = ${formatEuro(
-            i.price * (i.qty || 1)
-          )}`
-      )
-      .join("\n");
-    const payload = document.getElementById("checkoutCartPayload");
-    if (payload) payload.value = summary + "\n\nGesamt: " + formatEuro(cartTotal());
+    fillOrderPayload();
     const totalLabel = document.getElementById("checkoutTotal");
     if (totalLabel) totalLabel.textContent = formatEuro(cartTotal());
     modal.classList.add("active");
@@ -177,7 +169,62 @@ function closeCheckout() {
   document.body.style.overflow = "";
 }
 
-/** 0,02 € pro Member · je 10 Stück = 0,20 € */
+function buildOrderEmailBody() {
+  const cart = getCart();
+  const now = new Date();
+  const dateStr = now.toLocaleString("de-DE", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+  const lines = [];
+  lines.push("══════════════════════════════════");
+  lines.push("       BZM STORE – BESTELLUNG");
+  lines.push("══════════════════════════════════");
+  lines.push("");
+  lines.push("Datum:  " + dateStr);
+  lines.push("Status: Neu – Zahlung per Guthabenkarte");
+  lines.push("");
+  lines.push("───────── ARTIKEL ─────────");
+  cart.forEach((item, idx) => {
+    const lineTotal = formatEuro(item.price * (item.qty || 1));
+    lines.push("");
+    lines.push(idx + 1 + ". " + item.name);
+    if (item.options) lines.push("   Option: " + item.options);
+    lines.push("   Menge:  " + (item.qty || 1));
+    lines.push("   Preis:  " + lineTotal);
+  });
+  lines.push("");
+  lines.push("───────── SUMME ─────────");
+  lines.push("Gesamt: " + formatEuro(cartTotal()));
+  lines.push("");
+  lines.push("══════════════════════════════════");
+  lines.push("Zahlung: nur Guthabenkarte");
+  lines.push("Nächster Schritt: Kunde anschreiben");
+  lines.push("══════════════════════════════════");
+  return lines.join("\n");
+}
+
+function fillOrderPayload() {
+  const payload = document.getElementById("checkoutCartPayload");
+  if (payload) payload.value = buildOrderEmailBody();
+  const totalField = document.getElementById("checkoutTotalField");
+  if (totalField) totalField.value = formatEuro(cartTotal());
+  const itemsField = document.getElementById("checkoutItemsField");
+  if (itemsField) {
+    itemsField.value = getCart()
+      .map(
+        (i) =>
+          i.name +
+          (i.options ? " (" + i.options + ")" : "") +
+          " ×" +
+          (i.qty || 1) +
+          " = " +
+          formatEuro(i.price * (i.qty || 1))
+      )
+      .join("\n");
+  }
+}
+
 function calcMemberPrice(n) {
   n = Math.max(10, Math.min(50000, Number(n) || 10));
   const units = Math.ceil(n / 10);
@@ -218,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (checkoutForm) {
     checkoutForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      fillOrderPayload();
       const form = checkoutForm;
       const btn = form.querySelector('button[type="submit"]');
       if (btn) {
@@ -233,16 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         if (!res.ok) throw new Error("send failed");
         clearCart();
-        // relative – same host as the shop (no broken github.io link)
-        window.location.href = "danke.html";
+        window.location.href = THANKS_URL;
       } catch (err) {
-        alert(
-          "Bestellung konnte nicht gesendet werden. Bitte nochmal versuchen oder uns direkt schreiben."
-        );
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = "Bestellung senden";
-        }
+        form.submit();
       }
     });
   }
