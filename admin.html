@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Admin</title>
+  <title>Admin – BZM Store</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,91 +12,136 @@
   <link rel="stylesheet" href="admin.css" />
 </head>
 <body class="admin-body">
+  <div class="admin-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
   <div class="admin-lock" id="adminLock">
-    <div class="admin-lock-box">
-      <h1>Admin</h1>
-      <p>PIN eingeben</p>
-      <input type="password" id="pinInput" maxlength="12" autocomplete="off" inputmode="numeric" />
+    <div class="admin-lock-box glass-panel">
+      <div class="admin-lock-logo"><i class="fa-solid fa-lock"></i></div>
+      <h1>BZM Admin</h1>
+      <p class="lock-sub">Geschützter Bereich – PIN eingeben</p>
+      <div class="pin-field">
+        <input type="password" id="pinInput" maxlength="12" autocomplete="off" inputmode="numeric" placeholder="••••••" />
+      </div>
       <div class="admin-lock-err" id="pinErr"></div>
-      <button type="button" class="btn-admin" id="pinBtn" style="width:100%">Entsperren</button>
+      <button type="button" class="btn-admin" id="pinBtn" style="width:100%">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i> Entsperren
+      </button>
+      <p class="lock-hint">Nur für autorisierte Personen</p>
     </div>
   </div>
+
   <div class="admin-shell" id="adminShell">
     <aside class="admin-sidebar">
-      <div class="brand"><span>BZM</span> Admin</div>
+      <div class="brand">
+        <div class="brand-mark">BZM</div>
+        <div class="brand-text">
+          <span>BZM</span> Admin
+          <small>Dashboard</small>
+        </div>
+      </div>
       <nav class="admin-nav">
-        <button type="button" class="active" data-panel="announce"><i class="fa-solid fa-bullhorn"></i> Ankündigung</button>
-        <button type="button" data-panel="discounts"><i class="fa-solid fa-percent"></i> Rabatte</button>
-        <button type="button" data-panel="stats"><i class="fa-solid fa-chart-line"></i> Statistiken</button>
+        <button type="button" class="active" data-panel="announce">
+          <i class="fa-solid fa-bullhorn"></i> Ankündigung
+        </button>
+        <button type="button" data-panel="discounts">
+          <i class="fa-solid fa-percent"></i> Rabatte
+        </button>
+        <button type="button" data-panel="stats">
+          <i class="fa-solid fa-chart-line"></i> Statistiken
+        </button>
       </nav>
-      <button type="button" class="admin-logout" id="adminLogout"><i class="fa-solid fa-lock"></i> Sperren</button>
+      <button type="button" class="admin-logout" id="adminLogout">
+        <i class="fa-solid fa-lock"></i> Sperren
+      </button>
     </aside>
+
     <main class="admin-main">
       <section class="admin-panel active" id="panel-announce">
         <h2>Ankündigung</h2>
-        <p class="sub">Banner unter der Navbar – ein- und ausschaltbar.</p>
+        <p class="sub">Banner unter der Navbar im Shop – texten und ein- oder ausschalten.</p>
         <div class="admin-card">
-          <h3>Nachricht</h3>
+          <h3><i class="fa-solid fa-message"></i> Nachricht</h3>
           <div class="admin-field">
             <label>Text</label>
-            <textarea id="annText" placeholder="z.B. Heute 20% mit Code BOOST20"></textarea>
+            <textarea id="annText" placeholder="z.B. Heute 20% auf Boosts mit Code BOOST20"></textarea>
           </div>
           <div class="toggle-row">
-            <span>Ankündigung anzeigen</span>
+            <span>Ankündigung auf der Website anzeigen</span>
             <label class="switch">
               <input type="checkbox" id="annEnabled" />
               <span class="slider"></span>
             </label>
           </div>
-          <div style="margin-top:1rem">
-            <button type="button" class="btn-admin" id="annSave">Speichern</button>
+          <div class="card-actions">
+            <button type="button" class="btn-admin" id="annSave">
+              <i class="fa-solid fa-floppy-disk"></i> Speichern
+            </button>
           </div>
         </div>
       </section>
+
       <section class="admin-panel" id="panel-discounts">
         <h2>Rabattcodes</h2>
-        <p class="sub">Codes mit %-Rabatt für den Checkout.</p>
+        <p class="sub">Codes mit Prozent-Rabatt – Kunden geben sie im Checkout ein.</p>
         <div class="admin-card">
-          <h3>Neuen Code erstellen</h3>
+          <h3><i class="fa-solid fa-plus"></i> Neuen Code erstellen</h3>
           <div class="admin-row">
             <div class="admin-field">
               <label>Code</label>
               <input type="text" id="discCode" placeholder="SAVE10" style="text-transform:uppercase" />
             </div>
-            <div class="admin-field" style="max-width:120px">
+            <div class="admin-field" style="max-width:130px">
               <label>% Rabatt</label>
               <input type="number" id="discPercent" min="1" max="100" value="10" />
             </div>
             <div class="admin-field" style="flex:0">
               <label>&nbsp;</label>
-              <button type="button" class="btn-admin" id="discAdd">Anlegen</button>
+              <button type="button" class="btn-admin" id="discAdd">
+                <i class="fa-solid fa-check"></i> Anlegen
+              </button>
             </div>
           </div>
         </div>
         <div class="admin-card">
-          <h3>Aktive Codes</h3>
+          <h3><i class="fa-solid fa-tags"></i> Aktive Codes</h3>
           <table class="admin-table">
             <thead><tr><th>Code</th><th>Rabatt</th><th></th></tr></thead>
             <tbody id="discList"></tbody>
           </table>
         </div>
       </section>
+
       <section class="admin-panel" id="panel-stats">
         <h2>Statistiken</h2>
-        <p class="sub">Verkäufe aus Bestellungen auf diesem Browser (lokal).</p>
+        <p class="sub">Verkäufe aus Bestellungen in diesem Browser (lokal gespeichert).</p>
         <div class="stat-grid">
-          <div class="stat-box"><div class="n" id="statOrders">0</div><div class="l">Bestellungen</div></div>
-          <div class="stat-box"><div class="n" id="statItems">0</div><div class="l">Artikel verkauft</div></div>
-          <div class="stat-box"><div class="n" id="statRevenue">0,00 €</div><div class="l">Umsatz</div></div>
+          <div class="stat-box">
+            <div class="n" id="statOrders">0</div>
+            <div class="l">Bestellungen</div>
+          </div>
+          <div class="stat-box">
+            <div class="n" id="statItems">0</div>
+            <div class="l">Artikel</div>
+          </div>
+          <div class="stat-box">
+            <div class="n" id="statRevenue">0,00 €</div>
+            <div class="l">Umsatz</div>
+          </div>
         </div>
         <div class="admin-card">
-          <h3>Pro Produkt</h3>
+          <h3><i class="fa-solid fa-box"></i> Pro Produkt</h3>
           <table class="admin-table">
             <thead><tr><th>Produkt</th><th>Stück</th><th>Umsatz</th></tr></thead>
             <tbody id="statProducts"></tbody>
           </table>
         </div>
-        <button type="button" class="btn-admin ghost" id="statsReset">Stats zurücksetzen</button>
+        <button type="button" class="btn-admin ghost" id="statsReset">
+          <i class="fa-solid fa-trash"></i> Stats zurücksetzen
+        </button>
       </section>
     </main>
   </div>
