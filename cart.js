@@ -3,6 +3,7 @@
  */
 const CART_KEY = "bzm_cart";
 const THANKS_URL = "https://bzm-store.vercel.app/danke";
+const FORMSUBMIT_URL = "https://formsubmit.co/ajax/teyoorll@gmail.com";
 
 function getCart() {
   try {
@@ -263,8 +264,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const checkoutForm = document.getElementById("checkoutForm");
   if (checkoutForm) {
+    checkoutForm.action = FORMSUBMIT_URL;
+    checkoutForm.querySelectorAll('input[name="_next"]').forEach((el) => el.remove());
+
     checkoutForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      e.stopPropagation();
       fillOrderPayload();
       const form = checkoutForm;
       const btn = form.querySelector('button[type="submit"]');
@@ -274,16 +279,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       try {
         const fd = new FormData(form);
-        const res = await fetch(form.action, {
+        fd.delete("_next");
+        const res = await fetch(FORMSUBMIT_URL, {
           method: "POST",
           body: fd,
           headers: { Accept: "application/json" },
         });
-        if (!res.ok) throw new Error("send failed");
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok && !data.success) throw new Error("send failed");
         clearCart();
-        window.location.href = THANKS_URL;
+        window.location.replace(THANKS_URL);
       } catch (err) {
-        form.submit();
+        console.error(err);
+        alert(
+          "Bestellung konnte nicht gesendet werden. Bitte nochmal versuchen oder uns per Discord schreiben."
+        );
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Bestellung senden";
+        }
       }
     });
   }
