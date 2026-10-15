@@ -20,8 +20,6 @@
     }
     .promo-banner strong { color: #fb923c; }
     .promo-banner p { margin: 0; color: var(--text-muted); font-size: 0.95rem; flex: 1; min-width: 200px; }
-    .section { padding: 3.5rem 1.5rem; }
-    .cta-section { padding: 2.5rem 1.5rem 4rem; }
   </style>
 </head>
 <body>
@@ -95,11 +93,36 @@
       </div>
     </div>
   </section>
+
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom"><p>© 2026 BZM Store · <a href="/impressum">Impressum</a></p></div>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="BZM Store">
+            <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs><linearGradient id="bzGradFooter" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ef4444"/><stop offset="50%" stop-color="#f97316"/><stop offset="100%" stop-color="#fb923c"/>
+              </linearGradient></defs>
+              <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="url(#bzGradFooter)">BZM</text>
+              <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
+            </svg>
+          </a>
+          <p>Discord Boosts, Members &amp; Services – nur Guthabenkarten.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Hilfe</p>
+          <ul class="footer-links">
+            <li><a href="/services">Shop</a></li>
+            <li><a href="/#angebot">Angebot</a></li>
+            <li><button type="button" class="link-btn" data-open-cart>Warenkorb</button></li>
+            <li><a href="/impressum">Impressum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
+
   <div class="cart-overlay" id="cartOverlay"></div>
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header"><h2>Warenkorb</h2><button type="button" class="cart-close" data-close-cart><i class="fa-solid fa-xmark"></i></button></div>
