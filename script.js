@@ -49,6 +49,12 @@ const productNames = {
   "members-500": "Bot Members – 500",
   "members-1000": "Bot Members – 1.000",
   "members-5000": "Bot Members – 5.000",
+  "vanity": "Vanity URL",
+  "custom-bot": "Custom Bot",
+  "server-design": "Server Design",
+  "nitro": "Discord Nitro",
+  "mod-setup": "Moderation Setup",
+  "banner": "Banner & Icons",
 };
 
 document.querySelectorAll(".buy-btn").forEach((btn) => {
@@ -102,7 +108,7 @@ document.querySelectorAll("[data-aos]").forEach((el) => observer.observe(el));
 const navbar = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    navbar.style.background = "rgba(10, 10, 15, 0.75)";
+    navbar.style.background = "rgba(10, 10, 15, 0.8)";
   } else {
     navbar.style.background = "";
   }
