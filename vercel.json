@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/impressum", "destination": "/impressum.html" },
-    { "source": "/services", "destination": "/services.html" }
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/danke", "destination": "/danke.html" }
   ]
 }
