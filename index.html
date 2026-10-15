@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BZM Store – Discord Boosts, Members & Services</title>
-  <meta name="description" content="Günstige Discord Server Boosts, Members und weitere Services. Nur Guthabenkarten." />
+  <meta name="description" content="Günstige Discord Server Boosts, Bot Members und Services. Nur Guthabenkarten." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -20,7 +20,7 @@
   </div>
   <nav class="navbar glass">
     <div class="nav-container">
-      <a href="/" class="logo" aria-label="BZMStore">
+      <a href="/" class="logo" aria-label="BZM Store">
         <svg class="logo-svg" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img">
           <defs>
             <linearGradient id="bzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -34,9 +34,10 @@
         </svg>
       </a>
       <ul class="nav-links">
-        <li><a href="#boosts">Boosts</a></li>
-        <li><a href="/services">Services</a></li>
+        <li><a href="#angebot">Angebot</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#payment">Zahlung</a></li>
+        <li><a href="/services">Shop</a></li>
         <li><a href="/impressum">Impressum</a></li>
       </ul>
       <div class="nav-right">
@@ -44,7 +45,7 @@
           <i class="fa-solid fa-cart-shopping"></i>
           <span class="cart-count">0</span>
         </button>
-        <a href="/services" class="btn btn-primary nav-cta">Jetzt kaufen</a>
+        <a href="/services" class="btn btn-primary nav-cta">Zum Shop</a>
         <button class="mobile-menu-btn" aria-label="Menü"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
@@ -53,10 +54,10 @@
     <div class="hero-content">
       <div class="badge glass"><i class="fa-solid fa-bolt"></i><span>Schnell • Günstig • Sicher</span></div>
       <h1 class="hero-title">Discord Boosts,<br /><span class="gradient-text">Members & Services</span></h1>
-      <p class="hero-subtitle">Premium Boosts, Members und weitere Discord-Dienstleistungen zum Bestpreis.<br />Nur Zahlung mit Guthabenkarten.</p>
+      <p class="hero-subtitle">Alles für deinen Server – von Boosts und Members bis Bot, Design und mehr.<br />Preise ab 0,20 € · Zahlung nur mit Guthabenkarten.</p>
       <div class="hero-actions">
-        <a href="#boosts" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Boosts ansehen</a>
-        <a href="/services" class="btn btn-glass btn-lg"><i class="fa-solid fa-layer-group"></i> Alle Services</a>
+        <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-bag-shopping"></i> Jetzt konfigurieren</a>
+        <a href="#angebot" class="btn btn-glass btn-lg"><i class="fa-solid fa-circle-info"></i> Was wir anbieten</a>
       </div>
       <div class="hero-stats glass">
         <div class="stat"><span class="stat-value">2.500+</span><span class="stat-label">Zufriedene Kunden</span></div>
@@ -65,69 +66,112 @@
       </div>
     </div>
   </header>
-  <section id="boosts" class="section">
+  <section id="angebot" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge glass"><i class="fa-brands fa-discord"></i> Server Boosts</span>
-        <h2>Discord Server Boosts</h2>
-        <p>Wähle die Dauer und booste deinen Server sofort. <a href="/services" style="color:#f97316">Zum Konfigurator →</a></p>
+        <span class="section-badge glass"><i class="fa-solid fa-store"></i> Unser Angebot</span>
+        <h2>Was du bei BZM Store bekommst</h2>
+        <p>Kurzer Überblick – konfigurieren und bestellen geht im Shop.</p>
       </div>
       <div class="cards-grid">
         <article class="card glass product-card" data-aos="fade-up">
           <div class="card-icon boost"><i class="fa-solid fa-gem"></i></div>
-          <h3>1 Monat</h3><p class="card-desc">Ideal zum Testen.</p>
-          <div class="price"><span class="amount">2,99 €</span></div>
-          <a href="/services" class="btn btn-primary" style="width:100%;text-align:center">Konfigurieren</a>
+          <h3>Server Boosts</h3>
+          <p class="card-desc">Boosts für 1, 2, 3 oder 6 Monate. Mehr Level heißt bessere Features: höhere Upload-Limits, bessere Audio-Qualität und eine eigene Vanity-URL ab Level 3.</p>
+          <div class="price"><span class="amount">ab 2,99 €</span></div>
+          <ul class="features">
+            <li><i class="fa-solid fa-check"></i> Sofort aktiv</li>
+            <li><i class="fa-solid fa-check"></i> Level 1–3 möglich</li>
+            <li><i class="fa-solid fa-check"></i> Mengenrabatt bei längerer Dauer</li>
+          </ul>
+          <a href="/services#boosts" class="btn btn-primary buy-btn">Im Shop wählen</a>
         </article>
         <article class="card glass product-card popular" data-aos="fade-up">
-          <div class="popular-badge">Beliebt</div>
-          <div class="card-icon boost"><i class="fa-solid fa-gem"></i></div>
-          <h3>2 Monate</h3><p class="card-desc">Bester Preis.</p>
-          <div class="price"><span class="amount">5,49 €</span></div>
-          <a href="/services" class="btn btn-primary" style="width:100%;text-align:center">Konfigurieren</a>
+          <div class="popular-badge">Flexibel</div>
+          <div class="card-icon members"><i class="fa-solid fa-users"></i></div>
+          <h3>Bot Members</h3>
+          <p class="card-desc">Server füllen und aktiver wirken. Im Shop wählst du die genaue Anzahl per Regler – von 50 bis 20.000, Preis ab 0,20 € mit Mengenrabatt.</p>
+          <div class="price"><span class="amount">ab 0,20 €</span></div>
+          <ul class="features">
+            <li><i class="fa-solid fa-check"></i> Online Members</li>
+            <li><i class="fa-solid fa-check"></i> Freie Anzahl per Slider</li>
+            <li><i class="fa-solid fa-check"></i> Bulk-Rabatt ab 500+</li>
+          </ul>
+          <a href="/services#members" class="btn btn-primary buy-btn">Anzahl wählen</a>
         </article>
         <article class="card glass product-card" data-aos="fade-up">
-          <div class="card-icon boost"><i class="fa-solid fa-gem"></i></div>
-          <h3>3 Monate</h3><p class="card-desc">Mehr sparen.</p>
-          <div class="price"><span class="amount">7,99 €</span></div>
-          <a href="/services" class="btn btn-primary" style="width:100%;text-align:center">Konfigurieren</a>
-        </article>
-        <article class="card glass product-card" data-aos="fade-up">
-          <div class="card-icon boost"><i class="fa-solid fa-crown"></i></div>
-          <h3>6 Monate</h3><p class="card-desc">Max. Wert.</p>
-          <div class="price"><span class="amount">14,99 €</span></div>
-          <a href="/services" class="btn btn-primary" style="width:100%;text-align:center">Konfigurieren</a>
+          <div class="card-icon boost"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Weitere Services</h3>
+          <p class="card-desc">Vanity URL, Custom Bot, Server Design, Nitro, Ticket- und Leveling-System, Music Bot, Banner, Emojis und mehr – alles einzeln konfigurierbar.</p>
+          <div class="price"><span class="amount">ab 2,49 €</span></div>
+          <ul class="features">
+            <li><i class="fa-solid fa-check"></i> 14+ Dienstleistungen</li>
+            <li><i class="fa-solid fa-check"></i> Optional Notiz bei Bestellung</li>
+            <li><i class="fa-solid fa-check"></i> Alles in einen Warenkorb</li>
+          </ul>
+          <a href="/services" class="btn btn-primary buy-btn">Services ansehen</a>
         </article>
       </div>
     </div>
   </section>
-  <section id="members" class="section section-alt">
+  <section id="ablauf" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge glass"><i class="fa-solid fa-users"></i> Bot Members</span>
-        <h2>Bot Members</h2>
-        <p>Ab 0,20 € – Anzahl frei wählen per Slider. <a href="/services#members-config" style="color:#f97316">Jetzt konfigurieren →</a></p>
+        <span class="section-badge glass"><i class="fa-solid fa-route"></i> So läuft’s</span>
+        <h2>In drei Schritten bestellt</h2>
+        <p>Kein Account nötig – klarer Ablauf von Auswahl bis Lieferung.</p>
       </div>
-      <div style="text-align:center;margin-top:1rem">
-        <a href="/services#members-config" class="btn btn-primary btn-lg"><i class="fa-solid fa-sliders"></i> Members konfigurieren</a>
+      <div class="payment-grid">
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-sliders"></i>
+          <h3>1. Konfigurieren</h3>
+          <p>Im Shop wählst du den Service und stellst Menge, Dauer oder Notiz ein. Alles landet im Warenkorb.</p>
+        </div>
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-credit-card"></i>
+          <h3>2. Bestellen</h3>
+          <p>Checkout mit Discord und E-Mail. Zahlung ausschließlich per Guthabenkarte – anonym und sicher.</p>
+        </div>
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>3. Lieferung</h3>
+          <p>Nach Bestätigung oft unter 5 Minuten. Bei Design/Bot-Setups kann es 1–24 Stunden dauern.</p>
+        </div>
       </div>
     </div>
   </section>
   <section id="payment" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge glass"><i class="fa-solid fa-credit-card"></i> Zahlung</span>
+        <span class="section-badge glass"><i class="fa-solid fa-gift"></i> Zahlung</span>
         <h2>Nur Guthabenkarten</h2>
-        <p>PaySafe, Amazon, Google Play, Steam u.a. – sicher & anonym.</p>
+        <p>Keine Bankdaten. PaySafe, Amazon, Google Play, Steam und weitere – nach der Bestellung bekommst du die Anleitung.</p>
+      </div>
+      <div class="payment-grid">
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Sicher & anonym</h3>
+          <p>Keine IBAN, keine PayPal-Verknüpfung. Nur der Karten-Code nach Absprache.</p>
+        </div>
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>E-Mail-Bestätigung</h3>
+          <p>Jede Bestellung geht an uns und du bekommst eine Rückmeldung inkl. nächster Schritte.</p>
+        </div>
+        <div class="card glass payment-card">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h3>Warenkorb</h3>
+          <p>Mehrere Produkte in einer Bestellung – Boosts, Members und Services zusammen.</p>
+        </div>
       </div>
     </div>
   </section>
   <section class="cta-section">
     <div class="container">
       <div class="cta-box glass">
-        <h2>Bereit für deinen Boost?</h2>
-        <p>Services konfigurieren und in den Warenkorb legen.</p>
-        <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Zu den Services</a>
+        <h2>Bereit zum Konfigurieren?</h2>
+        <p>Im Shop wählst du aus, was du brauchst – Members per Slider, Boosts nach Dauer, Services mit Notiz.</p>
+        <a href="/services" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Zum Shop</a>
       </div>
     </div>
   </section>
@@ -148,10 +192,11 @@
               <text x="66" y="30" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">STORE</text>
             </svg>
           </a>
-          <p>Günstige Discord Boosts, Members & Services.</p>
+          <p>Discord Boosts, Members & Services – nur Guthabenkarten.</p>
         </div>
         <div class="footer-links">
-          <a href="/services">Services</a>
+          <a href="#angebot">Angebot</a>
+          <a href="/services">Shop</a>
           <a href="/impressum">Impressum</a>
           <button type="button" class="link-btn" data-open-cart>Warenkorb</button>
         </div>
@@ -159,7 +204,6 @@
       <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
-
   <div class="cart-overlay" id="cartOverlay"></div>
   <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
     <div class="cart-header">
@@ -173,7 +217,6 @@
       <button type="button" class="btn btn-primary btn-full" data-checkout>Zur Kasse</button>
     </div>
   </aside>
-
   <div class="modal-overlay" id="checkoutModal">
     <div class="modal glass checkout-modal">
       <button type="button" class="modal-close" data-close-checkout aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
@@ -197,12 +240,11 @@
           <label for="co-note">Nachricht</label>
           <textarea id="co-note" name="Nachricht" rows="3"></textarea>
         </div>
-        <p class="modal-note">Du bekommst eine Bestätigung per E-Mail. Wir senden die Guthabenkarten-Anleitung.</p>
+        <p class="modal-note">Bestätigung per E-Mail. Zahlung per Guthabenkarte.</p>
         <button type="submit" class="btn btn-primary btn-full">Bestellung senden</button>
       </form>
     </div>
   </div>
-
   <script src="cart.js"></script>
   <script src="script.js"></script>
   <script>
