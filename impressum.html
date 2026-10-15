@@ -4,12 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impressum – BZM Store</title>
+  <meta name="description" content="Impressum und rechtliche Angaben zu BZM Store." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="cart.css" />
+  <style>
+    .legal-page { padding: 7rem 1.5rem 4rem; position: relative; z-index: 1; }
+    .legal-wrap { max-width: 720px; margin: 0 auto; }
+    .legal-wrap h1 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800; margin-bottom: 0.5rem; }
+    .legal-lead { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
+    .legal-card { border-radius: 16px; padding: 1.75rem 1.5rem; margin-bottom: 1.25rem; }
+    .legal-card h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.85rem; color: #fb923c; }
+    .legal-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 0.4rem; }
+    .legal-card strong { color: var(--text); font-weight: 600; }
+    .legal-card a { color: #f97316; text-decoration: underline; }
+  </style>
 </head>
 <body>
   <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
@@ -29,26 +41,58 @@
         <li><a href="/services">Shop</a></li>
         <li><a href="/impressum">Impressum</a></li>
       </ul>
+      <div class="nav-right">
+        <button type="button" class="cart-btn" data-open-cart aria-label="Warenkorb">
+          <i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span>
+        </button>
+      </div>
     </div>
   </nav>
-  <main class="section" style="padding-top:7rem">
-    <div class="container" style="max-width:720px">
-      <h1 style="font-weight:800;margin-bottom:1.5rem">Impressum</h1>
-      <div class="card glass" style="padding:1.75rem">
+  <main class="legal-page">
+    <div class="legal-wrap">
+      <h1>Impressum</h1>
+      <p class="legal-lead">Angaben gemäß den gesetzlichen Bestimmungen (Luxemburg).</p>
+      <div class="legal-card glass">
+        <h2>Diensteanbieter</h2>
         <p><strong>Justin Scheer</strong></p>
-        <p>18, rue de la Cimenterie</p>
-        <p>L-5354 Oetrange</p>
+        <p>Op der Haaptstroos 31</p>
+        <p>9198 Ell</p>
         <p>Luxemburg</p>
-        <p style="margin-top:1rem">E-Mail: siehe Kontakt auf der Website</p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+352621399411">+352 621 399 411</a></p>
+        <p>E-Mail: <a href="mailto:teyoorll@gmail.com">teyoorll@gmail.com</a></p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p><strong>Justin Scheer</strong></p>
+        <p>Op der Haaptstroos 31</p>
+        <p>9198 Ell</p>
+        <p>Luxemburg</p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Haftung für Inhalte</h2>
+        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Haftung für Links</h2>
+        <p>Diese Website kann Links zu externen Websites Dritter enthalten. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Betreiber verantwortlich. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.</p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Urheberrecht</h2>
+        <p>Die auf dieser Website erstellten Inhalte und Werke unterliegen dem geltenden Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Verwertung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen Zustimmung des jeweiligen Rechteinhabers.</p>
+      </div>
+      <div class="legal-card glass">
+        <h2>Hinweis zum Angebot</h2>
+        <p>BZM Store bietet digitale Dienstleistungen rund um Discord (u. a. Boosts, Members, Server-Setup) an. Zahlung erfolgt nach Absprache ausschließlich über Guthabenkarten. Mit der Bestellung akzeptieren Sie die hier genannten Angaben und den Bestellablauf auf der Website.</p>
       </div>
     </div>
   </main>
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <p>BZM Store – nur Guthabenkarten.</p>
-        </div>
+        <div class="footer-brand"><p>BZM Store – Discord Boosts, Members &amp; Services.</p></div>
         <div class="footer-col">
           <p class="footer-col-title">Hilfe</p>
           <ul class="footer-links">
@@ -61,5 +105,6 @@
       <div class="footer-bottom"><p>© 2026 BZM Store</p></div>
     </div>
   </footer>
+  <script src="cart.js"></script>
 </body>
 </html>
